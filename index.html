@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <!-- navigation for desktop site -->
     <nav id="desktop-nav">
       <div class="logo">Sijan Bhusal</div>
       <div>
@@ -19,5 +20,62 @@
         </ul>
       </div>
     </nav>
+
+    <!-- navigation for mobile-view -->
+    <nav id="hamburger-nav">
+      <div class="logo">Sijan Bhusal</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+
+    <section id="profile">
+      <div class="section__pic-container">
+        <img src="./images/about-pic.webp" alt="Sijan Bhusal profile picture" />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1 class="title">Sijan Bhusak</h1>
+        <p class="section__text__p2">Frontend Developer</p>
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('./assets/resume-example.pdf')"
+          >
+            Download CV
+          </button>
+          <button
+            class="btn btn-color-1"
+            onclick="location.href = './#contact'"
+          >
+            Contact Info
+          </button>
+        </div>
+        <div id="socials-container">
+          <img
+            src="./images/linkedin.png"
+            alt="My LinkedIn profile"
+            class="icon"
+            onclick="location.href = 'https://linkedin.com/sijan-bhusal07'"
+          />
+          <img
+            src="./images/github.png"
+            alt="My Github profile"
+            class="icon"
+            onclick="location.href = 'https://github.com/Sijan-Bhusal'"
+          />
+        </div>
+      </div>
+    </section>
   </body>
 </html>
