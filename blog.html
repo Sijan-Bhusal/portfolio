@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - Sijan Bhusal</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media-queries.css" />
+  </head>
+  <body>
+    <!-- navigation for desktop site -->
+    <nav id="desktop-nav">
+      <a href="index.html" class="logo">Sijan Bhusal</a>
+      <div>
+        <ul class="nav-links">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#experience">Skills</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="blog.html" class="active">Blog</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+        <span id="theme-icon">🌙</span>
+      </button>
+    </nav>
+
+    <!-- navigation for mobile-view -->
+    <nav id="hamburger-nav">
+      <a href="index.html" class="logo">Sijan Bhusal</a>
+      <div class="hamburger-menu">
+        <button
+          id="theme-toggle-mobile"
+          class="theme-toggle"
+          aria-label="Toggle theme"
+          onclick="document.getElementById('theme-toggle').click()"
+        >
+          <span class="theme-icon-mobile">🌙</span>
+        </button>
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="index.html#about" onclick="toggleMenu()">About</a></li>
+          <li>
+            <a href="index.html#experience" onclick="toggleMenu()">Skills</a>
+          </li>
+          <li>
+            <a href="index.html#projects" onclick="toggleMenu()">Projects</a>
+          </li>
+          <li>
+            <a href="blog.html" onclick="toggleMenu()" class="active">Blog</a>
+          </li>
+          <li>
+            <a href="index.html#contact" onclick="toggleMenu()">Contact</a>
+          </li>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <section id="blog-header" class="blog-page-header">
+      <p class="section__text__p1">Read My</p>
+      <h1 class="title">Blog</h1>
+      <p class="blog-intro">
+        Sharing my learning journey, tutorials, and tech insights.
+      </p>
+    </section>
+
+    <!-- Blog Posts -->
+    <section id="blog-posts" class="blog-posts-section">
+      <div class="blog-grid">
+        <!-- Blog Post Card 1 -->
+        <article class="blog-card">
+          <div class="blog-card-image">
+            <div class="blog-card-placeholder">
+              <span>📝</span>
+            </div>
+          </div>
+          <div class="blog-card-content">
+            <span class="blog-card-date">Coming Soon</span>
+            <h3 class="blog-card-title">My First Blog Post</h3>
+            <p class="blog-card-excerpt">
+              Stay tuned! I'll be sharing my experiences learning web
+              development and building projects.
+            </p>
+            <span class="blog-card-tag">Web Development</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#experience">Skills</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2026 Sijan Bhusal. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
