@@ -4,19 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personal Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/media-queries.css" />
   </head>
   <body>
     <!-- navigation for desktop site -->
     <nav id="desktop-nav">
-      <div class="logo">Sijan Bhusal</div>
+      <a href="index.html" class="logo">Sijan Bhusal</a>
       <div>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#blog">Blog</a></li>
+          <li><a href="blog.html">Blog</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -27,7 +31,7 @@
 
     <!-- navigation for mobile-view -->
     <nav id="hamburger-nav">
-      <div class="logo">Sijan Bhusal</div>
+      <a href="index.html" class="logo">Sijan Bhusal</a>
       <div class="hamburger-menu">
         <button
           id="theme-toggle-mobile"
@@ -46,7 +50,7 @@
           <li><a href="#about" onclick="toggleMenu()">About</a></li>
           <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
           <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#blog" onclick="toggleMenu()">Blog</a></li>
+          <li><a href="blog.html" onclick="toggleMenu()">Blog</a></li>
           <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
         </div>
       </div>
@@ -150,44 +154,28 @@
             <h2 class="experience-sub-title">Frontend Development</h2>
             <div class="article-container">
               <article>
-                <img
-                  src="./images/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <i class="devicon-html5-plain colored skill-icon"></i>
                 <div>
                   <h3>HTML</h3>
                   <p>Intermediate</p>
                 </div>
               </article>
               <article>
-                <img
-                  src="./images/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <i class="devicon-css3-plain colored skill-icon"></i>
                 <div>
                   <h3>CSS</h3>
                   <p>Intermediate</p>
                 </div>
               </article>
               <article>
-                <img
-                  src="./images/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <i class="devicon-javascript-plain colored skill-icon"></i>
                 <div>
                   <h3>JavaScript</h3>
                   <p>Learning</p>
                 </div>
               </article>
               <article>
-                <img
-                  src="./images/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <i class="devicon-react-original colored skill-icon"></i>
                 <div>
                   <h3>React</h3>
                   <p>Learning</p>
@@ -199,44 +187,28 @@
             <h2 class="experience-sub-title">Programming & Tools</h2>
             <div class="article-container">
               <article>
-                <img
-                  src="./images/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <i class="devicon-c-plain colored skill-icon"></i>
                 <div>
                   <h3>C</h3>
                   <p>Intermediate</p>
                 </div>
               </article>
               <article>
-                <img
-                  src="./images/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <i class="devicon-python-plain colored skill-icon"></i>
                 <div>
                   <h3>Python</h3>
                   <p>Learning</p>
                 </div>
               </article>
               <article>
-                <img
-                  src="./images/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <i class="devicon-flutter-plain colored skill-icon"></i>
                 <div>
                   <h3>Flutter</h3>
                   <p>Learning</p>
                 </div>
               </article>
               <article>
-                <img
-                  src="./images/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <i class="devicon-dart-plain colored skill-icon"></i>
                 <div>
                   <h3>Dart</h3>
                   <p>Learning</p>
@@ -300,24 +272,6 @@
       />
     </section>
 
-    <!-- Blog Section -->
-    <section id="blog">
-      <p class="section__text__p1">Read My</p>
-      <h1 class="title">Blog</h1>
-      <div class="blog-container">
-        <p class="blog-placeholder">
-          Coming soon! I'll be sharing my learning journey, tutorials, and tech
-          insights here.
-        </p>
-      </div>
-      <img
-        src="./images/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href = './#contact'"
-      />
-    </section>
-
     <!-- Contact Section -->
     <section id="contact">
       <p class="section__text__p1">Get in Touch</p>
@@ -356,7 +310,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#blog">Blog</a></li>
+            <li><a href="blog.html">Blog</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
