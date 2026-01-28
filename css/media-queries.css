@@ -163,27 +163,6 @@
     max-width: 100%;
   }
 
-  /* Blog Page */
-  .blog-page-header {
-    min-height: 30vh;
-    padding-top: 60px;
-  }
-
-  .blog-intro {
-    font-size: 16px;
-    padding: 0 20px;
-  }
-
-  .blog-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 0;
-  }
-
-  .blog-card-content {
-    padding: 20px;
-  }
-
   /* Contact Section */
   .contact-info-upper-container {
     flex-direction: column;
