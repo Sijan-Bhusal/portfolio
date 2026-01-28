@@ -10,8 +10,17 @@ function toggleMenu() {
 function initTheme() {
   const themeToggle = document.getElementById("theme-toggle");
 
-  // Check for saved theme preference or default to light
-  const savedTheme = localStorage.getItem("theme") || "light";
+  // Check for saved theme preference, system preference, or default to light
+  let savedTheme = localStorage.getItem("theme");
+
+  if (!savedTheme) {
+    // Check system preference
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+    savedTheme = prefersDark ? "dark" : "light";
+  }
+
   document.documentElement.setAttribute("data-theme", savedTheme);
   updateThemeIcon(savedTheme);
 
@@ -23,6 +32,17 @@ function initTheme() {
     localStorage.setItem("theme", newTheme);
     updateThemeIcon(newTheme);
   });
+
+  // Listen for system theme changes
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", (e) => {
+      const newTheme = e.matches ? "dark" : "light";
+      if (!localStorage.getItem("theme")) {
+        document.documentElement.setAttribute("data-theme", newTheme);
+        updateThemeIcon(newTheme);
+      }
+    });
 }
 
 function updateThemeIcon(theme) {
@@ -34,7 +54,7 @@ function updateThemeIcon(theme) {
 
   if (themeIcon) {
     themeIcon.textContent = iconText;
-    themeIcon.setAttribute("aria-label", label);
+    document.getElementById("theme-toggle").setAttribute("aria-label", label);
   }
   if (mobileThemeIcon) {
     mobileThemeIcon.textContent = iconText;
