@@ -20,8 +20,7 @@
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <!-- <li><a href="#contact">Contact</a></li> -->
         </ul>
       </div>
       <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
@@ -29,6 +28,7 @@
       </button>
     </nav>
 
+    <!-- # TODO: Build a new app -->
     <!-- navigation for mobile-view -->
     <nav id="hamburger-nav">
       <a href="index.html" class="logo">Sijan Bhusal</a>
@@ -50,8 +50,7 @@
           <li><a href="#about" onclick="toggleMenu()">About</a></li>
           <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
           <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="blog.html" onclick="toggleMenu()">Blog</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          <!-- <li><a href="#contact" onclick="toggleMenu()">Contact</a></li> -->
         </div>
       </div>
     </nav>
@@ -92,6 +91,12 @@
             class="icon"
             onclick="location.href = 'https://github.com/Sijan-Bhusal'"
           />
+          <img
+            src="./images/email.png"
+            alt="My Email"
+            class="icon"
+            onclick="location.href = 'mailto:sijan.bhusal03@gmail.com'"
+          />
         </div>
       </div>
     </section>
@@ -126,12 +131,11 @@
             <p>
               I'm a passionate Computer Science student currently pursuing my
               BSc CSIT degree at Tribhuvan University. I'm actively learning
-              frontend development with a focus on HTML, CSS, JavaScript, and
-              React. I enjoy solving problems on platforms like LeetCode and
-              building projects to strengthen my skills. I'm eager to grow as a
-              developer and contribute to meaningful projects while continuously
-              expanding my knowledge in web technologies and software
-              development.
+              android development with a focus on Flutter and Dart . I enjoy
+              solving problems on platforms like LeetCode and building projects
+              to strengthen my skills. I'm eager to grow as a developer and
+              contribute to meaningful projects while continuously expanding my
+              knowledge in web technologies and software development.
             </p>
           </div>
         </div>
@@ -236,11 +240,11 @@
             <div class="article-container">
               <img
                 src="./images/project-1.png"
-                alt="Project 1"
+                alt="Project 2"
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">ShoppingCart</h2>
+            <h2 class="experience-sub-title project-title">Tutor-Hub</h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
@@ -256,10 +260,24 @@
           <div class="details-container color-container">
             <div class="article-container">
               <img
-                src="./images/project-2.png"
+                src="./images/Dashboard.png"
                 alt="Project 2"
                 class="project-img"
               />
+            </div>
+            <h2 class="experience-sub-title project-title">
+              Hostel Management System
+            </h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="
+                  location.href =
+                    'https://github.com/Sijan-Bhusal/ShoppingCart.git'
+                "
+              >
+                Github
+              </button>
             </div>
           </div>
         </div>
@@ -272,49 +290,18 @@
       />
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./images/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p>
-            <a href="mailto:sijanbhusal07@gmail.com">sijanbhusal07@gmail.com</a>
-          </p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./images/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p>
-            <a href="https://linkedin.com/in/sijan-bhusal07" target="_blank"
-              >LinkedIn</a
-            >
-          </p>
-        </div>
-      </div>
-    </section>
-
     <!-- Footer -->
     <footer>
-      <nav>
+      <!-- <nav>
         <div class="nav-links-container">
           <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="blog.html">Blog</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
-      </nav>
+      </nav> -->
       <p>Copyright &#169; 2026 Sijan Bhusal. All Rights Reserved.</p>
     </footer>
 
