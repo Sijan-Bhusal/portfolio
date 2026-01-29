@@ -63,3 +63,34 @@ function updateThemeIcon(theme) {
 
 // Initialize theme on page load
 document.addEventListener("DOMContentLoaded", initTheme);
+
+// Typewriter effect
+const words = ["App", "Web"];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typewriter = document.getElementById("typewriter");
+
+function type() {
+  const currentWord = words[wordIndex];
+
+  if (isDeleting) {
+    typewriter.textContent = currentWord.substring(0, charIndex - 1);
+    charIndex--;
+  } else {
+    typewriter.textContent = currentWord.substring(0, charIndex + 1);
+    charIndex++;
+  }
+
+  if (!isDeleting && charIndex === currentWord.length) {
+    setTimeout(() => (isDeleting = true), 1500);
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    wordIndex = (wordIndex + 1) % words.length;
+  }
+
+  const speed = isDeleting ? 100 : 150;
+  setTimeout(type, speed);
+}
+
+type();
