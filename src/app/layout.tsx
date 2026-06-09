@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { silka } from "./fonts";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Analytics } from "@vercel/analytics/next";
 export const metadata: Metadata = {
     title: "Sijan Bhusal — Developer",
     description: "Computer Science student & developer",
@@ -22,6 +23,7 @@ export default function RootLayout({
                     disableTransitionOnChange
                 >
                     {children}
+                    <Analytics />
                 </ThemeProvider>
             </body>
         </html>
