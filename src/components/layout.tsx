@@ -1,0 +1,163 @@
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
+import { Responsive, WidthProvider } from "react-grid-layout";
+import { TabKey } from "@/utils/tabs";
+import {
+    AboutLayouts,
+    BlogsLayouts,
+    HomeLayouts,
+    MediaLayouts,
+    ProjectLayouts,
+    keys,
+} from "@/utils/layout.helper";
+import { AboutMe } from "./tiles/about-me";
+import { cn } from "@/lib/utils";
+import { Map } from "./tiles/map";
+import { Myria } from "./tiles/foodscore";
+import { YouTubeMusic } from "./tiles/youtube-music";
+import { Github } from "./tiles/github";
+import { Status } from "./tiles/status";
+import { Blog } from "./tiles/blog";
+import { Empress } from "./tiles/tutor-hub";
+import { Fluence } from "./tiles/mechclick";
+import { BlogsList } from "./tiles/blogs-list";
+import { Languages } from "./tiles/languages";
+import { LeetCode } from "./tiles/leetcode";
+import { motion, AnimatePresence } from "framer-motion";
+
+interface LayoutProps {
+    tab: TabKey;
+    setTab: React.Dispatch<React.SetStateAction<TabKey>>;
+    left?: number;
+    sliderWidth?: number;
+}
+
+const componentMap: Record<string, () => React.ReactNode> = {
+    a: () => <AboutMe />,
+    b: () => <Map />,
+    c: () => <Myria />,
+    d: () => <YouTubeMusic />,
+    e: () => <Github />,
+    f: () => <Status />,
+    g: () => <Blog />,
+    h: () => <Empress />,
+    i: () => <Fluence />,
+    k: () => <Languages />,
+    l: () => <LeetCode />,
+    n: () => <BlogsList />,
+};
+
+const rowHeights = {
+    lg: 280,
+    md: 180,
+    sm: 164,
+    xs: 136,
+};
+
+type Breakpoint = keyof typeof rowHeights;
+
+function Layout({ tab }: LayoutProps) {
+    const [currentlayout, setCurrentLayout] = useState(HomeLayouts);
+    const [breakpoint, setBreakpoint] = useState<Breakpoint>("lg");
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => setMounted(true), []);
+
+    useEffect(() => {
+        switch (tab) {
+            case TabKey.Projects:
+                setCurrentLayout(ProjectLayouts);
+                break;
+            case TabKey.Home:
+                setCurrentLayout(HomeLayouts);
+                break;
+            case TabKey.About:
+                setCurrentLayout(AboutLayouts);
+                break;
+            case TabKey.Media:
+                setCurrentLayout(MediaLayouts);
+                break;
+            case TabKey.Blogs:
+                setCurrentLayout(BlogsLayouts);
+                break;
+            default:
+                setCurrentLayout(HomeLayouts);
+        }
+    }, [tab]);
+
+    const ResponsiveReactGridLayout = useMemo(
+        () => WidthProvider(Responsive),
+        []
+    );
+    const activeLayout = currentlayout[breakpoint] || currentlayout.lg;
+    const rowHeight = rowHeights[breakpoint] || 180;
+
+    return (
+        <AnimatePresence>
+            {mounted && (
+                <motion.div
+                    className="w-screen p-0 pb-20"
+                    key="grid"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                        duration: 0.5,
+                        ease: "easeOut",
+                    }}
+                >
+                    <div className="w-full responsive">
+                        <ResponsiveReactGridLayout
+                            className={"w-full"}
+                            breakpoints={{
+                                xl: 1200,
+                                lg: 800,
+                                md: 375,
+                                sm: 324,
+                                xs: 0,
+                            }}
+                            cols={{ xl: 4, lg: 4, md: 4, sm: 2, xs: 2 }}
+                            margin={[16, 16]}
+                            rowHeight={rowHeight}
+                            layouts={currentlayout}
+                            onBreakpointChange={(bp) =>
+                                setBreakpoint(bp as Breakpoint)
+                            }
+                            isResizable={false}
+                            isDraggable={
+                                breakpoint !== "xs" && breakpoint !== "sm"
+                            }
+                            useCSSTransforms={false}
+                            draggableCancel=".no-drag"
+                        >
+                            {keys.map((key) => {
+                                const layoutItem = activeLayout.find(
+                                    (item) => item.i === key
+                                );
+                                const disabled = layoutItem?.disabled ?? false;
+                                return (
+                                    <div
+                                        key={key}
+                                        className={cn(
+                                            `rounded-xl p-0 bg-card visible
+                                            cursor-grab active:cursor-grabbing
+                                            overflow-hidden
+                                            hover:shadow-[0_5px_24px_0_rgba(100,100,111,0.1)]
+                                            dark:shadow-[inset_0_0_0_2px_rgb(48,54,61)]
+                                            group`,
+                                            disabled && "opacity-40"
+                                        )}
+                                    >
+                                        {componentMap[key]()}
+                                    </div>
+                                );
+                            })}
+                        </ResponsiveReactGridLayout>
+                    </div>
+                </motion.div>
+            )}
+        </AnimatePresence>
+    );
+}
+
+export default Layout;
