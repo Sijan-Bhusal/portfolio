@@ -112,7 +112,7 @@ function Layout({ tab }: LayoutProps) {
                             breakpoints={{
                                 xl: 1200,
                                 lg: 800,
-                                md: 375,
+                                md: 600,
                                 sm: 324,
                                 xs: 0,
                             }}

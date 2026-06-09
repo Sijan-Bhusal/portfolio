@@ -258,9 +258,17 @@
     height: auto;
 }
 
+.github-icon {
+    width: 28px;
+}
+
 @media (min-width: 800px) and (max-width: 1200px) {
     .youtube-icon {
         width: 34px;
+    }
+
+    .github-icon {
+        width: 40px;
     }
 }
 
@@ -271,6 +279,12 @@
 
     .github-icon {
         width: 72px;
+    }
+}
+
+@media (max-width: 799px) {
+    .youtube-icon {
+        width: 28px;
     }
 }
 
@@ -287,6 +301,11 @@
     }
 }
 @media (max-width: 799px) {
+    .responsive {
+        max-width: 600px;
+    }
+}
+@media (max-width: 599px) {
     .responsive {
         max-width: 375px;
     }
@@ -311,16 +330,15 @@
     .responsive-nav {
         flex-direction: column;
         justify-content: center;
-        height: 180px;
+        height: auto;
+        padding: 16px 3.5vw;
+        gap: 12px;
     }
 
     .responsive-nav img {
-        margin: 36px 0 24px;
+        margin: 0;
     }
 
-    .responsive-nav .contact {
-        display: none;
-    }
 }
 
 img {

@@ -4,7 +4,7 @@ import { Button } from "../button";
 
 export function Blog() {
     return (
-        <div className="py-[40px] px-[44px] size-full flex flex-col justify-between items-center">
+        <div className="py-6 px-6 sm:py-[40px] sm:px-[44px] size-full flex flex-col justify-between items-center">
             <div>
                 <h2 className={`${moranga.className} font-bold text-2xl mb-1`}>
                     How it started vs. how it&apos;s going

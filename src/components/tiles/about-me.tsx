@@ -7,23 +7,23 @@ import { ThemeToggle } from "./theme-toggle";
 export function AboutMe() {
     return (
         <div
-            className="px-8 py-6 sm:px-10 sm:py-8 size-full flex flex-col
-                items-start justify-end overflow-hidden gap-6"
+            className="px-6 py-5 sm:px-10 sm:py-8 size-full flex flex-col
+                items-start justify-start gap-3 sm:gap-6"
         >
             <div
-                className="flex justify-between items-center
+                className="flex justify-between items-center shrink-0
                     pointer-events-none"
             >
                 <Image
                     src="/images/cat-profile.jpeg"
                     alt="Sijan"
-                    className="max-h-32 size-[50px] sm:size-[100px] rounded-full
+                    className="size-10 xs:size-[50px] sm:size-[100px] rounded-full
                         object-cover"
                     width={100}
                     height={100}
                 />
             </div>
-            <p className="leading-6 sm:leading-6.5 text-[13px] sm:text-sm">
+            <p className="leading-5 sm:leading-6.5 text-xs sm:text-sm">
                 I&apos;m{" "}
                 <span className={`${moranga.className} font-bold text-3xl`}>
                     Sijan

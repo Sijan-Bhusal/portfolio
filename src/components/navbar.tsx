@@ -101,7 +101,9 @@ const Navbar = ({
             </div>
             <a
                 className="hover:opacity-50 cursor-pointer transition-opacity
-                    duration-200 contact"
+                    duration-200 contact flex items-center h-8 px-5
+                    rounded-[50px] bg-[rgba(0,0,0,0.04)] dark:bg-muted
+                    dark:shadow-[inset_0_0_0_2px_rgb(48,54,61)]"
                 href={`mailto:${config.email}`}
             >
                 <p>Hire Me</p>
