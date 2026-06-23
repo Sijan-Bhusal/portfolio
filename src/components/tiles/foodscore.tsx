@@ -7,7 +7,7 @@ export function Myria() {
         <ProjectTile
             src="/images/foodscore.png"
             alt="FoodScore"
-            href="https://github.com/Sijan-Bhusal/FoodScore"
+            href="https://github.com/sijan-dev/FoodScore"
             label="FoodScore"
             imageWidth={564}
             imageHeight={1161}

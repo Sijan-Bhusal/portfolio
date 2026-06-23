@@ -24,7 +24,7 @@ export function Github() {
                 </Tooltip>
             </div>
             <img
-                src={`https://ghchart.rshah.org/Sijan-Bhusal`}
+                src={`https://ghchart.rshah.org/sijan-dev`}
                 alt="GitHub Contribution Heatmap"
                 className="w-full h-auto rounded"
             />
